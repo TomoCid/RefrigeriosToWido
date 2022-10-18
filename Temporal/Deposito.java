@@ -6,13 +6,13 @@ class Deposito {
     private ArrayList<Bebida> al;
 
     public Deposito() {
-        al = new ArrayList();
+        al = new ArrayList<Bebida>();
     }
 
     public void addBebida(Bebida a) {
         al.add(a);
     }
-
+    
     public Bebida getBebida() {
         if (al.size() != 0) {
             return al.remove(0);

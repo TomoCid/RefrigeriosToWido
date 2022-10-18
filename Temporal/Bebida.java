@@ -1,46 +1,59 @@
 package Temporal;
+//a
 
+//W. Remplace las clases
 abstract class Bebida{
 
-    public String beber() {
-        String x1 = new String("Sabor:");
-        return x1;
-  }
-}
-class Sprite extends Bebida {
+    private int Serie;
 
-    public Sprite() {
-        super();
+    public Bebida(int a){
+        Serie = a;
     }
 
-    public String beber() {
-        String x = new String("sprite");
-        return super.beber() + x;
+    public Bebida(){
+
+    }
+
+    public int getSerie() {
+        return Serie;
+    }
+
+    public String beber(){
+        return "sabor: ";
+    }
+
+}
+
+class Sprite extends Bebida {
+
+    public Sprite(int serie) {
+        super(serie);
+    }
+    public String beber(){
+        return super.beber() + "sprite";
+
     }
 }
 
 class CocaCola extends Bebida {
 
-    public CocaCola() {
-        super();
+    public CocaCola(int serie) {
+        super(serie);
     }
 
-    public String beber() {
-        String x = new String("CocaCola");
-        return super.beber() + x;
+    public String beber(){
+        return super.beber() + "cocacola";
     }
 }
 
 class Fanta extends Bebida {
 
-    public Fanta() {
-        super();
+    public Fanta(int serie) {
+        super(serie);
     }
 
-    public String beber() {
-        String x = new String("Fanta");
-        return super.beber() + x;
+    public String beber(){
+        return super.beber() + "fanta";
     }
 }
-
 
