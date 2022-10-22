@@ -6,7 +6,8 @@ class Expendedor {
     private Deposito sprite;
     private DepositoMonedas vuelto;
     private int Precio;
-    private int CantidadAuxiliar; 
+    private int CantidadAuxiliar;
+    private int saldoAuxiliar=0; 
 
     //W. La maquina tiene un deposito donde almacena el vuelto a entregar
     //Sas
@@ -87,7 +88,9 @@ class Expendedor {
     
     //Este se invoca desde el constructor de Comprador (AGREGAR EXCEPCIONES)
     public void comprarBebida(Moneda moneda, int bebidaSeleccionada){
-
+        if(moneda!=null){
+            saldoAuxiliar=moneda.getValues();
+        }
         //Idea general! Deben agregarse excepciones
 
         if(moneda.getValues() == this.Precio){
@@ -103,12 +106,15 @@ class Expendedor {
                 calcularVuelto(moneda.getValues());
             }
 
-        }else if(moneda.getValues() <= this.Precio){
-            //excepcion dinero insuficiente
-        }
-
-        //excepcion moneda nula
-
+        }else{ 
+            if(moneda.getValues() < this.Precio){
+            try{
+                throw new ErrorException("No hay saldo suficiente");
+            }catch(ErrorException e){
+                System.out.println(e.getMessage());
+            }
+        }   
     }
-
 }
+}
+        //excepcion moneda nula
