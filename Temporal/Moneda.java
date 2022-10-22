@@ -1,22 +1,17 @@
 package Temporal;
 
-public class Moneda {
+abstract class Moneda{
+    
 
-    int getValor
+    public Moneda(){
 
-    public Moneda() {
     }
 
-}
+    public abstract int getValues();
 
-class Moneda1000 extends Moneda{
-    private int valor1000 = 1000;
-}
+    public abstract int getSerie();
 
-class Moneda500 extends Moneda{
+    public abstract String toString();
 
-}
-
-class Moneda100 extends Moneda{
 
 }
