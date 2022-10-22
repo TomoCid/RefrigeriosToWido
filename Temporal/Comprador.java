@@ -8,17 +8,8 @@ public class Comprador{
     public Comprador(Moneda moneda, int bebidaElegida, Expendedor expendedorQueUsara){
         //Pensando
 
-        //Comprobar si alcanza el dinero para comprar una bebida, Igual que en la realidad :(     
-        //hola
-        
-
-        
-
         expendedorQueUsara.comprarBebida(moneda, bebidaElegida);
 
-
-        
-    
     }
 
 
