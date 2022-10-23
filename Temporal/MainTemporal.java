@@ -15,6 +15,7 @@ public class MainTemporal {
         expendedor1.entregarVuelto();
         expendedor1.entregarVuelto();
         expendedor1.entregarVuelto();
+        expendedor1.entregarVuelto();
         Comprador PedritoHojasDePapel = new Comprador(moneda1, 1, expendedor2);
         
 
