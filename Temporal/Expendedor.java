@@ -6,8 +6,7 @@ class Expendedor {
     private Deposito sprite;
     private DepositoMonedas vuelto;
     private int Precio;
-    private int CantidadAuxiliar;
-    private int saldoAuxiliar=0; 
+    private int CantidadAuxiliar; 
 
     //W. La maquina tiene un deposito donde almacena el vuelto a entregar
     //Sas
@@ -88,9 +87,6 @@ class Expendedor {
     
     //Este se invoca desde el constructor de Comprador (AGREGAR EXCEPCIONES)
     public void comprarBebida(Moneda moneda, int bebidaSeleccionada){
-        if(moneda!=null){
-            saldoAuxiliar=moneda.getValues();
-        }
         //Idea general! Deben agregarse excepciones
 
         if(moneda.getValues() == this.Precio){
@@ -104,17 +100,31 @@ class Expendedor {
             if(hayBebidas()){
                 sacarBebida(bebidaSeleccionada);
                 calcularVuelto(moneda.getValues());
+            }else{
+                try{
+                    switch(bebidaSeleccionada){
+                        case 0:
+                            throw new Error3Exception("No queda CocaCola");
+                        case 1:
+                            throw new Error3Exception("No queda Sprite");
+                        case 2:
+                            throw new Error3Exception("No queda Fanta");
+                        default:
+                            throw new Error3Exception("Seleccione una bebida valida");
+                    }
+                }catch(Error3Exception msg3){
+                    System.out.println(msg3.getMessage());
+                }
             }
-
         }else{ 
-            if(moneda.getValues() < this.Precio){
             try{
-                throw new ErrorException("No hay saldo suficiente");
-            }catch(ErrorException e){
+                if(moneda.getValues() < this.Precio){
+                    throw new Error1Exception("No hay saldo suficiente");
+                }
+            }catch(Error1Exception e){
                 System.out.println(e.getMessage());
             }
         }   
     }
-}
 }
         //excepcion moneda nula
