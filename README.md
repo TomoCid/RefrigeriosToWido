@@ -1,2 +1,6 @@
 # RefrigeriosToWido
-Tarea 2 Programación II: Tomás Cid / Brendan Rubilar / Pedro Muñoz
+Tarea 2 Programación II
+
+Integrantes:
+
+ Tomás Cid Muñoz / Brendan Rubilar Vivanco / Pedro Muñoz Solano 
