@@ -20,4 +20,13 @@ class Deposito {
             return null;
         }
     }
+
+    public Boolean hayBebidas(){
+        if(al.size()!=0 ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 }

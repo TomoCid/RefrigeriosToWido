@@ -1,7 +1,4 @@
 package Temporal;
-//a
-
-//W. Remplace las clases
 abstract class Bebida{
 
     private int Serie;
