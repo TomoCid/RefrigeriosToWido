@@ -21,8 +21,7 @@ public class MainTemporal {
         //Ahora veremos un caso en el que el que el precio es superior al dinero del cliente
         Moneda1000 moneda2 = new Moneda1000();
         Expendedor expendedor2 = new Expendedor(1,1200);
-        Comprador DiegoLlamaDeFosforo = new Comprador(moneda2, 2, expendedor2);
-
+        Comprador DiegoFosforo = new Comprador(moneda2, 2, expendedor2);
 
         System.out.println("\n------------- Compra [3]------------\n");
         //Caso en el que no quedan bebidas en el expendedor 
@@ -54,7 +53,7 @@ public class MainTemporal {
         System.out.println("\n------------\n");
 
         Comprador BradPitt = new Comprador(moneda4, 2, expendedor5);
-        BradPitt.ClienteCompraBebida(moneda4, 0, expendedor5);
+        BradPitt.ClienteCompra(moneda4, 0, expendedor5);
         expendedor5.entregarVuelto();
         expendedor5.entregarVuelto();
         expendedor5.entregarVuelto();
@@ -64,18 +63,5 @@ public class MainTemporal {
         System.out.println("\n-------------Extra------------\n");
         System.out.println(moneda1.toString());
         System.out.println(moneda4.toString());
-        
-        
-
-  
-
-        
-
-
-   
-        
-        
-    
-
     }
 }

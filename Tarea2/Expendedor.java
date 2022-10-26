@@ -44,7 +44,7 @@ class Expendedor {
 
     }
 
-    public void texto(){
+    public void vueltoString(){
         if(vuelto.listIsEmpty()==false){
             System.out.println("Recibiste $100"); 
         }else{
@@ -53,12 +53,12 @@ class Expendedor {
     }
 
     public void entregarVuelto(){
-        texto();
+        vueltoString();
         vuelto.getMoneda();
     }
 
-    public void sacarBebida(int bebidaSeleccionada){
-                    switch(bebidaSeleccionada){
+    public void sacarBebida(int Soda){
+            switch(Soda){
                 case 0: coca.getBebida();
                         System.out.println("Ha comprado una Coca-Cola");
                         break;
@@ -74,7 +74,7 @@ class Expendedor {
     }
     
     //Este se invoca desde el constructor de Comprador
-    public void comprarBebida(Moneda moneda, int bebidaSeleccionada){
+    public void comprarBebida(Moneda moneda, int Soda){
         //Lo primero que se debe hacer es verificar si la moneda es nula, de ser así no se sigue ejecutando el codigo
         if( Objects.isNull(moneda)){
             try{
@@ -85,7 +85,7 @@ class Expendedor {
         }else{
             //Este fragmento de codigo nos seleccionara el deposito de bebidas al que queremos acceder
             boolean booleanAux=false;
-            switch(bebidaSeleccionada){
+            switch(Soda){
               case 0: booleanAux= coca.hayBebidas();
                         break;
              case 1: booleanAux= sprite.hayBebidas();
@@ -93,19 +93,18 @@ class Expendedor {
              case 2: booleanAux= fanta.hayBebidas();
             }
 
-        
             //Este codigo está encargado de verificar todos los casos y realizar la compra de la bebida
             if(moneda.getValues() == this.Precio && booleanAux){
-              sacarBebida(bebidaSeleccionada);
+              sacarBebida(Soda);
 
             }else if(moneda.getValues() >= this.Precio){
 
              if(booleanAux){
-                   sacarBebida(bebidaSeleccionada);
+                   sacarBebida(Soda);
                     calcularVuelto(moneda.getValues());
                 }else{
                   try{
-                       switch(bebidaSeleccionada){
+                       switch(Soda){
                         case 0:
                             throw new Error3Exception("No queda CocaCola");
                         case 1:
@@ -116,12 +115,14 @@ class Expendedor {
                             throw new Error3Exception("Seleccione una bebida valida");
                     }
                     }catch(Error3Exception msg3){
+                        System.out.println("Se devuelve la moneda de $"+moneda.getValues()+" pesos.");
                         System.out.println(msg3.getMessage());
                     }
                 }
             }else{ 
                 try{
                     if(moneda.getValues() < this.Precio){
+                        System.out.println("Se devuelve la moneda de $"+moneda.getValues()+" pesos.");
                         throw new Error1Exception("No hay saldo suficiente");
                     }
                 }catch(Error1Exception e){
