@@ -1,12 +1,11 @@
 package Tarea2;
 
 public class MainTemporal {
-
     public static void main(String[] args) {
        
         /*
         Mostraremos todos los casos posibles al intentar comprar una bebida, para que se comprenda de mejor manera
-        la salida del terminal usaremos sout's para separar cada ejemplo.
+        la salida del terminal usaremos sout's para separar cada ejemplo .
         */
     
         //Demostración del funcionamiento del programa en un caso perfecto
