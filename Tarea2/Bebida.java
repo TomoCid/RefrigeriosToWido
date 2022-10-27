@@ -7,10 +7,6 @@ abstract class Bebida{
         Serie = a;
     }
 
-    public Bebida(){
-
-    }
-
     public int getSerie() {
         return Serie;
     }
