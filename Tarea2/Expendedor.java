@@ -8,7 +8,6 @@ class Expendedor {
     private DepositoMonedas vuelto;
     private int Precio;
 
-
     //La maquina tiene un deposito donde almacena el vuelto a entregar
     //Constructor del expendedor, se le entrega la cantidad de bebidas y el precio (Valores iguales para todos los depositos)
     public Expendedor(int cantidad, int precio) {
@@ -22,7 +21,7 @@ class Expendedor {
         for (int i = 0; i < cantidad; i++) {
             coca.addBebida(new CocaCola(i+100));
             sprite.addBebida(new Sprite(i+200));
-            fanta.addBebida(new Fanta(i+200));
+            fanta.addBebida(new Fanta(i+300));
         }
     }
 
